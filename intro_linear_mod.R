@@ -48,7 +48,7 @@ text(1, 6, "R2 = 0.9406, p = 2.2e-16")
 plot(species.lm)
 shapiro.test(species.lm$residuals)
 #P-value = 0.0367 
-#if p-value > 0.05, then distribution is normal. Doubt it!
+#if p-value > 0.05, then distribution is normal. Otherwise, Doubt it!
 #Linear model to plot species vs. petal length 
 #Post Hop test to see more 
 
