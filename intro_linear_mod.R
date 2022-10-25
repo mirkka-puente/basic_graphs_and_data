@@ -1,3 +1,6 @@
+#library
+install.packages("car")
+
 ##Relationship between petal length and petal width
 ##Correlation -----
 petal.cor <- cor(iris$Petal.Length, iris$Petal.Width)
@@ -35,13 +38,22 @@ species.lm
 summary(species.lm)
 anova(species.lm)
 #Differences are significant: p-value < 0.01
+#Not all species have same petal length -> they vary
 
 #Box plot
 plot(iris$Petal.Length ~ iris$Species, data = iris)
-text(1, 6, "R2 = 0.927, p = 2.2e-16")
+text(1, 6, "R2 = 0.9406, p = 2.2e-16")
 
 #Residuals normality and homescedasticity 
 plot(species.lm)
 shapiro.test(species.lm$residuals)
-#P-value = 0.0367
-#Linear model to plot species vs. petal length is valid
+#P-value = 0.0367 
+#if p-value > 0.05, then distribution is normal. Doubt it!
+#Linear model to plot species vs. petal length 
+#Post Hop test to see more 
+
+#library
+library(car)
+## Homoscetasticity 
+car::leveneTest(species.lm)
+##Groups are not homoscedastic. Variances are different between groups
