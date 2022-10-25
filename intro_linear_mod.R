@@ -13,14 +13,16 @@ summary(petal.lm)
 #R2 = 0.927, p = 2*10-16 (prob. of having a horizontal line)
 
 ##Linear regression
-plot(iris$Petal.Length ~ iris$Petal.Width, data = iris)
-abline(petal.lm)
+plot(iris$Petal.Length ~ iris$Petal.Width, data = iris) #we can see homes
+abline(petal.lm) #line
 text(0.5, 6, "y = 1.08 + 2.23x /n R2 = 0.927  p = 2.2e-16")
 
 #Residuals normality and homescedasticity
 plot(petal.lm)
 shapiro.test(petal.lm$residuals)
 #Residuals seem normal
+#p-value = 0.3753
+#Normality assumption is middle due to p-value
 
 ##ANOVA
 ##For the anova we need a categorical independent value
