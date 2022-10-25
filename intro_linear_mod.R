@@ -36,7 +36,7 @@ summary(species.lm)
 anova(species.lm)
 #Differences are significant: p-value < 0.01
 
-#BBox plot
+#Box plot
 plot(iris$Petal.Length ~ iris$Species, data = iris)
 text(1, 6, "R2 = 0.927, p = 2.2e-16")
 
