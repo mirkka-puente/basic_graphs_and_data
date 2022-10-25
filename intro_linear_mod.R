@@ -1,5 +1,5 @@
 #library
-install.packages("car")
+#install.packages("car")
 
 ##Relationship between petal length and petal width
 ##Correlation -----
@@ -57,3 +57,5 @@ library(car)
 ## Homoscetasticity 
 car::leveneTest(species.lm)
 ##Groups are not homoscedastic. Variances are different between groups
+#Low p-value = low probability for the variance of groups to be similar
+
